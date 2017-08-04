@@ -1,0 +1,34 @@
+/* hover over navigation dots shows thumbnails */
+
+/* position and size slides that are not the current (active) one to allow the hover over dot effect to work */
+.slideshow-javascript .slideshow-thumb:hover:not(.slideshow-active) .slideshow-slide {
+  z-index: 2;
+  opacity: 1;
+  width: 100px;
+  height: 64px;
+  margin-top: -80px;
+  margin-left: -38px;
+  border: 2px solid white;
+  border: 2px solid var(--slideshow-color);
+  box-shadow: 0 0 5px #888;
+  box-shadow: 0 0 5px var(--slideshow-shadow-color);
+}
+/* adds the arrow with fake shadow effect */
+.slideshow-javascript .slideshow-thumb:hover:not(.slideshow-active) .slideshow-slide::before,
+.slideshow-javascript .slideshow-thumb:hover:not(.slideshow-active) .slideshow-slide::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  border: 12px solid transparent;
+  border-top-color: rgba(100,100,100,0.3);
+  margin-top: 66px;
+  margin-left: 36px;
+}
+.slideshow-javascript .slideshow-thumb:hover:not(.slideshow-active) .slideshow-slide::after {
+  border: 10px solid transparent;
+  border-top-color: white;
+  border-top-color: var(--slideshow-color);
+  margin-top: -25px;
+  margin-left: 38px;
+}

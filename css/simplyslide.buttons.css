@@ -1,0 +1,103 @@
+/* buttons */
+.slideshow:not(.slideshow-nav) .slideshow-button[data-slideshow-action="next"],
+.slideshow:not(.slideshow-nav) .slideshow-button[data-slideshow-action="prev"],
+.slideshow:not(.slideshow-javascript) .slideshow-button {
+  display: none;
+}
+.slideshow-button {
+  position: absolute;
+  z-index: 3;
+  background-color: transparent;
+  color: white;
+  color: var(--slideshow-color);
+  text-shadow: 0 0 2px #888;
+  text-shadow: 0 0 2px var(--slideshow-shadow-color);
+  border: 0;
+  border-color: white;
+  border-color: var(--slideshow-color);
+  border-style: solid;
+  font-size: 1.5em;
+  opacity: 0.5;
+  cursor: pointer;
+  bottom: 10px;
+  height: 30px;
+  width: 30px;
+  overflow: hidden;
+  text-indent: -9999px;
+  line-height: 1000px;
+}
+.slideshow-button:hover {
+  opacity: 1;
+}
+.slideshow-button[data-slideshow-action="index"] {
+  top: 1em;
+  right: 1em;
+  border-width: 0px;
+}
+.slideshow-button[data-slideshow-action="index"]::before {
+  content: "";
+  display: block;
+  box-shadow: 0 -8px 0, -8px -8px 0, 8px -8px 0, 0 0 0 32px inset, -8px 0 0, 8px 0 0, 0 8px 0, -8px 8px 0, 8px 8px 0;
+  width: 4px;
+  height: 4px;
+  box-sizing: border-box;
+  padding: 0;
+  margin-top: 12px;
+  margin-left: 7px;
+}
+.slideshow-button[data-slideshow-action="next"],
+.slideshow-button[data-slideshow-action="prev"] {
+  bottom: auto;
+  top: 50%;
+  left: 10px;
+  border-width: 2px;
+  margin-top: -15px;
+}
+.slideshow-button[data-slideshow-action="prev"] {
+  border-top: 0;
+  border-right: 0;
+  transform: rotate(45deg);
+}
+.slideshow-button[data-slideshow-action="next"] {
+  border-left: 0;
+  border-bottom: 0;
+  transform: rotate(45deg);
+  left: auto;
+  right: 10px;
+}
+.slideshow-button[data-slideshow-action="play"]::before {
+  content: "";
+  width: 0;
+  height: 0;
+  display: block;
+  border-style: solid;
+  border-width: 10px;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  border-top-color: transparent;
+  border-left-width: 15px;
+}
+.slideshow-button[data-slideshow-action="pause"]::before,
+.slideshow-button[data-slideshow-action="pause"]::after {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 0;
+  height: 10px;
+  border-color: inherit;
+  border-style: solid;
+  border-width: 4px;
+  bottom: 3px;
+}
+.slideshow-button[data-slideshow-action="pause"]::after {
+  margin-left: 13px;
+}
+.slideshow-button[data-slideshow-action="play"],
+.slideshow-button[data-slideshow-action="pause"] {
+  bottom: 13px;
+  left: 13px;
+}
+.slideshow-paused .slideshow-button[data-slideshow-action="pause"],
+.slideshow-playing .slideshow-button[data-slideshow-action="play"] {
+  display: none;
+}

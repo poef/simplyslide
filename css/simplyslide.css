@@ -1,0 +1,12 @@
+@import 'simplyslide.base.css';
+@import 'simplyslide.buttons.css';
+@import 'simplyslide.nav-hover.css';
+@import 'simplyslide.nav.css';
+@import 'simplyslide.nav.bars.css';
+@import 'simplyslide.transitions.css';
+@import 'simplyslide.simplyedit.css';
+:root {
+    --slideshow-color: white;
+    --slideshow-shadow-color: #888;
+    --slideshow-aspect-ratio: calc(4 / 3);
+}

@@ -1,0 +1,23 @@
+/* transitions */
+.slideshow.slideshow-fade .slideshow-slide {
+  transition: opacity 2s;
+}
+.slideshow.slideshow-kenburns {
+  overflow: hidden;
+}
+.slideshow.slideshow-kenburns .slideshow-slide {
+  transition: opacity 2s, transform 10s;
+  transform-origin: bottom left;
+}
+.slideshow.slideshow-kenburns .slideshow-active .slideshow-slide {
+  transform: scale(1.1);
+}
+.slideshow.slideshow-kenburns .slideshow-thumb:nth-child(2n+1) .slideshow-slide {
+  transform-origin: top right;
+}
+.slideshow.slideshow-kenburns .slideshow-thumb:nth-child(3n+1) .slideshow-slide {
+  transform-origin: top left;
+}
+.slideshow.slideshow-kenburns .slideshow-thumb:nth-child(4n+1) .slideshow-slide {
+  transform-origin: bottom right;
+}

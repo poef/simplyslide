@@ -1,0 +1,15 @@
+/* bars */
+.slideshow-bars .slideshow-thumb::before {
+  height: 0;
+  width: 20px;
+  border-radius: 0 !important;
+  margin-top: 15px !important;
+  border-color: #888 !important;
+}
+.slideshow-bars .slideshow-thumb.slideshow-active::before {
+  border-color: var(--slideshow-color) !important;
+}
+.slideshow-bars .slideshow-thumb:hover:not(.slideshow-active) .slideshow-slide {
+  margin-top: -67px;
+  margin-left: -33px;
+}

@@ -1,0 +1,61 @@
+/* navigation */
+.slideshow.slideshow-nav:not(.slideshow-javascript) .slideshow-thumb::before {
+    display: none;
+}
+.slideshow.slideshow-nav:not(.slideshow-javascript) .slideshow-thumb:hover {
+    position: static !important;
+}
+/* use flexbox to show the dots for each slide center bottom */
+.slideshow-nav .slideshow-slides {
+  display: flex;
+  justify-content: center;
+}
+
+/* make the dots/squares appear inside the image */
+.slideshow-nav .slideshow-thumb {
+  margin-top: -2.5em;
+}
+
+/* on hover the thumbnail of the slide should be positioned
+relative to the dot */
+.slideshow-nav .slideshow-thumb:hover {
+  position: relative;
+}
+/* but not for the active slide, since it is already visible full size */
+.slideshow-nav .slideshow-thumb.slideshow-active:not(.slip-reordering) {
+  position: static;
+}
+
+/* show a dot for each slide as navigation */
+.slideshow-thumb {
+  border-color: white;
+  border-color: var(--slideshow-color);
+}
+
+.slideshow-nav .slideshow-thumb::before {
+  content: "" !important;
+  opacity: 1 !important;
+  background-color: transparent !important;
+  padding: 0 !important;
+  display: block;
+  position: relative !important;
+  z-index: 100;
+  border-width: 2px;
+  border-style: solid;
+  border-color: inherit !important;
+  width: 10px;
+  height: 10px;
+  border-radius: 50% !important;
+  margin: 5px 5px 20px 5px !important;
+  cursor: pointer;
+  box-shadow: 0 0 3px #888, inset 0 0 2px #888 !important;
+  box-shadow: 0 0 3px var(--slideshow-shadow-color), inset 0 0 2px var(--slideshow-shadow-color) !important;
+}
+
+/* dont show an inner shadow for the active dot */
+.slideshow-nav .slideshow-thumb.slideshow-active::before {
+  background-color: white !important;
+  background-color: var(--slideshow-color) !important;
+  box-shadow: 0 0 3px #888 !important;
+  box-shadow: 0 0 3px var(--slideshow-shadow-color) !important;
+}
